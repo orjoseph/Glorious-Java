@@ -2,7 +2,7 @@
  * uses Scanner to read in the lines u entered
  */
 import java.util.Scanner;
-public class example01 
+public class copycat 
 {
   public static void main(String args[])
 	{
