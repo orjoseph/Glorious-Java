@@ -1,0 +1,70 @@
+//Author: Orlando Joseph
+
+
+public class Stack 
+{
+  private int last;
+	private int []array=new int[20];
+	
+	//Constructor init's last to -1
+	public Stack(){last=-1;}
+	
+	// methods
+	// top most value in the stack in decreased
+	void pop()
+	{
+		last--;
+	}
+	
+	// the array sub last is increased and is equal to the val given
+	void push(int val)
+	{
+		array[++last]=val;
+	}
+	
+	// boolean functions that returns true if the value in the stack is -1
+	boolean empty()
+	{
+		if(last==-1)
+			return true; 
+		return false;
+	}
+	
+	boolean isfull()
+	{
+		if(array.length>20)
+			return true;
+		return false;
+	}
+	
+    // top function returns the topmost value
+	// of the stack
+	int top(){return array[last];}
+	
+	public static void main(String argv[])
+	{
+		Stack s= new Stack();
+
+		if(s.empty()==true)
+			System.out.print("Right now the stack is empty...\n");
+		
+		System.out.print("About to add ten numbers to the stack...\n");
+		for(int i=0;i<10;i++)
+		{
+			s.push(i);
+			System.out.print(s.top()+" ");
+		}
+		System.out.print(" are values on the stack\n");
+
+		System.out.print("About to pop 4 values off the stack\n");
+		while(s.top() > 5)
+		{
+			System.out.print(s.top());
+			s.pop();
+			System.out.print(" was popped off the stack\n");
+			if(s.empty()==true)
+				System.out.print("Your stack is empty");
+		}
+	} //end of main method
+
+} // end of stack class
