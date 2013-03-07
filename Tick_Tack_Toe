@@ -1,0 +1,50 @@
+import java.util.*;
+public class Tick_Tack_Toe {
+  public Tick_Tack_Toe ()
+	{
+		
+	}
+	
+	static int[][] board = new int[3][3];
+	
+	int[][] create_board(int [][]board)
+	{
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)
+				board[i][j]=0;
+		}
+		return board;
+	}
+	
+	void printBoard(int [][]board)
+	{
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)
+			{
+				System.out.print(" " + board[i][j]);
+			}
+			System.out.println();
+		}
+	}  
+
+
+	public static void main (String args [])
+	{	
+		Tick_Tack_Toe t= new Tick_Tack_Toe();
+		
+		t.create_board(board);
+		t.printBoard(board);
+		
+		System.out.println("Let's Begin the Game");
+		System.out.print("Player 1 Enter your choice");
+		
+		Scanner scan=new Scanner(System.in);
+		String s=scan.nextLine();
+		
+		
+	}
+
+}
+	
