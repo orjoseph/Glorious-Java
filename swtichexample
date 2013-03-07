@@ -1,0 +1,56 @@
+import java.util.*;
+public class Switchexample 
+{
+  public static void main(String arsgpp[])
+	{
+		Scanner myScanner=new Scanner(System.in);
+		Random myRandom=new Random();
+		int randomNumber;
+		
+		System.out.print("Type your question, my child: ");
+		myScanner.nextLine();
+		
+		randomNumber=myRandom.nextInt(10)+1;
+		
+		switch(randomNumber)
+		{
+		case 1:
+			System.out.println("Yes. Isn't it obvious?");
+			break;
+		case 2:
+			System.out.println("No, and don't ask again.");
+			break;
+		case 3:
+			System.out.print("Yessir, yessir!");
+			System.out.println(" Three bags full.");
+			break;
+		case 4:
+			System.out.print("What part of 'no'");
+			System.out.println(" don't you understand?");
+		case 5:
+			System.out.println("No chance, Lance.");
+			break;
+		case 6:
+			System.out.println("Sure, whatevever.");
+			break;
+		case 7:
+			System.out.println("Yes, but only if you're nice to me.");
+			break;
+		case 8:
+			System.out.println("Yes (as if I care).");
+			break;
+		case 9:
+			System.out.println("No, not until Cromwell seizes Dover.");
+			break;
+		case 10:
+			System.out.println("No, not until Nell squeezes Rover.");
+			break;
+			default:
+				System.out.println("You think you have problems?");
+				System.out.print("My random number generator is broken!");
+				break;
+		}
+		System.out.println("Goodbye");
+	}
+
+}
