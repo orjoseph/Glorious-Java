@@ -1,0 +1,13 @@
+public class MArray {
+  public static void main(String[] arsg){
+		int array[]={3,4,5,6,7};
+		change(array);
+		
+		for(int x: array)
+			System.out.println(x);
+	}
+	public static void change(int x[]){
+		for(int c=0;c<x.length;c++)
+			x[c]+=5;
+	}
+}
