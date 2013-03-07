@@ -1,0 +1,116 @@
+/**
+ * Author: Orlando Joseph
+ * Fall 2006 */
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
+import java.util.Random;
+
+
+public class Rings extends Applet
+{
+  public void init()
+	{
+		
+		Panel buttons = new Panel();
+		buttons.setLayout(new FlowLayout());
+		buttons.setBackground(Color.black);
+		
+		reset= new Button("Reset");
+		random= new Button("Random/Feeling Lucky");
+		
+		RingCanvas ringcanvas = new RingCanvas();
+		
+		add(ringcanvas);
+		add(reset);
+		add(random);
+		setBackground(Color.black);
+		setSize(300,250);
+	}
+	class RingCanvas extends Canvas implements ActionListener
+	{
+		public RingCanvas()
+		{
+			super();
+			
+			reset.addActionListener(this);
+			random.addActionListener(this);
+			
+			original_one= Color.blue;
+			original_two= Color.black;
+			original_three=Color.red;
+			original_four=Color.yellow;
+			original_five=Color.green;
+			
+			setBackground(Color.gray);
+			setSize(300,150);
+			
+		}
+		
+		/**
+		 * Methods is used to draw on the applet 
+		 * or canvas itself
+		 */
+		public void paint(Graphics o)
+		{
+			setBackground(Color.gray);
+			o.setColor(original_one);
+			for(int i=0;i<5;i++)
+				o.drawOval(5-i, 5-i, 80, 80);
+			
+			o.setColor(original_two);
+			for(int i=0;i<5;i++)
+				o.drawOval(90-i,5-i,80,80);
+			
+			o.setColor(original_three);
+			for(int i=0;i<5;i++)
+				o.drawOval(175-i,5-i,80,80);
+			
+			o.setColor(original_four);
+			for(int i=0;i<5;i++)
+				o.drawOval(45-i,50-i,80,80);
+			
+			o.setColor(original_five);
+			for(int i=0;i<5;i++)
+				o.drawOval(135-i,50-i,80,80);
+		}
+		
+		/**
+		 * Methods checks to see if registered buttons
+		 * were pressed.
+		 */
+		public void actionPerformed(ActionEvent e)
+		{
+			Random r = new Random();
+			
+			if(e.getSource()==reset)
+			{
+				original_one= Color.blue;
+				original_two= Color.black;
+				original_three=Color.red;
+				original_four=Color.yellow;
+				original_five=Color.green;
+			}
+			
+			/**
+			 * Randomly changing colors of the oval rings 
+			 * if the Random/Feeling Lucky button is pressed
+			 */
+			if(e.getSource()==random)
+			{
+				original_one= new Color(r.nextInt(256),r.nextInt(256),r.nextInt(256));
+				original_two= new Color(r.nextInt(256),r.nextInt(256),r.nextInt(256));
+				original_three= new Color(r.nextInt(256),r.nextInt(256),r.nextInt(256));
+				original_four= new Color(r.nextInt(256),r.nextInt(256),r.nextInt(256));
+				original_five= new Color(r.nextInt(256),r.nextInt(256),r.nextInt(256));
+				
+			}
+			
+			repaint(); //repaints the applet with the new colors
+		}
+	}
+	Button	reset,random;
+	Color   original_one,original_two,original_three,original_four,original_five;
+}
+
+
