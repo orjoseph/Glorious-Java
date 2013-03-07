@@ -1,0 +1,24 @@
+// Author: Orlando Joseph
+// Program goes through an array comparring values 
+// to see which is the biggest value
+public class Max 
+{
+  public static void main(String argv[])
+	{
+		int a[]={0,1,2,3,9,1,8,25,2};
+		int maxSoFar=0, max=0;
+		
+		for(int i=0;i<a.length-1;i++)
+		{
+			if( a[i] < a[i+1] )
+				maxSoFar=a[i+1];
+			else
+				max=a[i];
+			
+			if(maxSoFar > max)
+				max=maxSoFar;
+		}
+		System.out.printf("The Maximum number in the array is " + max);
+	}// end of main class
+
+} // end of max class
